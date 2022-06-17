@@ -21,7 +21,7 @@
 # Disabling this will also mean that passwords must be stored in plain text. It
 # is strongly recommended that you only disable WITH_TLS if you are not using
 # password authentication at all.
-WITH_TLS:=yes
+WITH_TLS:=no
 
 # Comment out to disable TLS/PSK support in the broker and client. Requires
 # WITH_TLS=yes.
@@ -108,7 +108,7 @@ WITH_COVERAGE:=no
 WITH_UNIX_SOCKETS:=yes
 
 # Build mosquitto_sub with cJSON support
-WITH_CJSON:=yes
+WITH_CJSON:=no
 
 # Build mosquitto with support for the $CONTROL topics.
 WITH_CONTROL:=yes
@@ -315,7 +315,7 @@ endif
 
 MAKE_ALL:=mosquitto
 ifeq ($(WITH_DOCS),yes)
-	MAKE_ALL:=$(MAKE_ALL) docs
+	MAKE_ALL:=$(MAKE_ALL)
 endif
 
 ifeq ($(WITH_JEMALLOC),yes)

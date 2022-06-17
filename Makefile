@@ -44,7 +44,7 @@ DISTFILES= \
 	README-windows.txt \
 	README.md
 
-.PHONY : all mosquitto api docs binary check clean reallyclean test install uninstall dist sign copy localdocker
+.PHONY : all mosquitto api binary check clean reallyclean test install uninstall dist sign copy localdocker
 
 all : $(MAKE_ALL)
 
@@ -52,9 +52,6 @@ api :
 	mkdir -p api p
 	naturaldocs -o HTML api -i lib -p p
 	rm -rf p
-
-docs :
-	set -e; for d in ${DOCDIRS}; do $(MAKE) -C $${d}; done
 
 binary : mosquitto
 
